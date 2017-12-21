@@ -162,7 +162,7 @@ class ViewController: UIViewController {
     // MARK: - 点击事件
     
     /// 展示动画
-    @IBAction func showAnimate(_ sender: Any) {
+    @IBAction private func showAnimate(_ sender: Any) {
         let sprintAni = CASpringAnimation(keyPath: "position.y")
         sprintAni.damping = 10
         sprintAni.mass = 5
@@ -177,12 +177,12 @@ class ViewController: UIViewController {
     }
     
     /// 进入视频列表
-    @IBAction func enterListViewController(_ sender: Any) {
+    @IBAction private func enterListViewController(_ sender: Any) {
         stopAndSaveVideo()
     }
     
     /// 准备录制
-    @IBAction func startRecord(_ sender: Any) {
+    @IBAction private func startRecord(_ sender: Any) {
         guard !isRecording else {
             return
         }
@@ -193,7 +193,7 @@ class ViewController: UIViewController {
     }
     
     /// 暂停或继续
-    @IBAction func pauseRecord(_ sender: Any) {
+    @IBAction private func pauseRecord(_ sender: Any) {
         if isRecording {
             /// 暂停
             isRecording = false
@@ -216,7 +216,7 @@ class ViewController: UIViewController {
     }
     
     /// 结束录制
-    @IBAction func endRecord(_ sender: Any) {
+    @IBAction private func endRecord(_ sender: Any) {
         stopAndSaveVideo()
     }
     

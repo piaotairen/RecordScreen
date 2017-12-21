@@ -10,8 +10,10 @@ import UIKit
 import AVFoundation
 
 protocol VideoCaptureDelegate: NSObjectProtocol {
+    /// 视频录制结束
     func recordingFinished(filePath: String)
     
+    /// 视频录制失败
     func recordingFailed(error: Error?)
 }
 
@@ -169,6 +171,7 @@ class VideoCapture: NSObject {
         }
     }
     
+    /// 创建视频帧
     @objc private func createFrame() {
         if !isWriting, let currentContext = context {
             isWriting = true
@@ -188,6 +191,11 @@ class VideoCapture: NSObject {
         }
     }
     
+    /// 写入视频帧
+    ///
+    /// - Parameters:
+    ///   - time: 时间
+    ///   - newImage: 图片
     private func writeVideoFrameAtTime(time: CMTime, contextImage newImage:CGImage)  {
         guard let writeInput = videoWriterInput, writeInput.isReadyForMoreMediaData else {
             return
