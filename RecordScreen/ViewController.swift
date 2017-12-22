@@ -227,9 +227,6 @@ class ViewController: UIViewController {
         audioCapture?.beginRecord(byFileName: videoName)
     }
     
-    // MARK: - 视频处理
-    
-    
     // MARK: - ReplayKit
     
     /// 使用 ReplayKit 开始录制
@@ -256,6 +253,16 @@ class ViewController: UIViewController {
                 print(error?.localizedDescription as Any)
             }
         }
+    }
+    
+    // MARK: - 只录制视频
+    
+    @IBAction func recordVideoOnlyStart(_ sender: Any) {
+        ScreenRecorder.default?.startRecord()
+    }
+    
+    @IBAction func recordVideoOnlyStop(_ sender: Any) {
+        ScreenRecorder.default?.stopRecord()
     }
 }
 

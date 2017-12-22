@@ -109,6 +109,28 @@
                                     <action selector="endRecordWithReplayKit" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ad6-8d-Xve"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8wx-yy-0Q1">
+                                <rect key="frame" x="40" y="384" width="95" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="IIV-Us-uAQ"/>
+                                    <constraint firstAttribute="width" constant="95" id="JFI-IT-dAF"/>
+                                </constraints>
+                                <state key="normal" title="只录视频开始"/>
+                                <connections>
+                                    <action selector="recordVideoOnlyStart:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Utf-Nk-WUa"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="POj-no-wNi">
+                                <rect key="frame" x="240" y="384" width="95" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="2OH-ff-9Cx"/>
+                                    <constraint firstAttribute="width" constant="95" id="A8s-Fs-eUk"/>
+                                </constraints>
+                                <state key="normal" title="只录视频结束"/>
+                                <connections>
+                                    <action selector="recordVideoOnlyStop:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qd2-19-AhH"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -118,12 +140,16 @@
                             <constraint firstItem="Tfi-FE-s6b" firstAttribute="top" secondItem="5k3-vA-RLu" secondAttribute="bottom" constant="120" id="E0g-Mu-fxy"/>
                             <constraint firstItem="JYG-kl-BRX" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="Gjs-yx-ZPz"/>
                             <constraint firstItem="LGr-gt-MgP" firstAttribute="leading" secondItem="YF7-Ic-z3R" secondAttribute="trailing" constant="30" id="Gqi-sS-ENj"/>
+                            <constraint firstItem="POj-no-wNi" firstAttribute="top" secondItem="oyy-28-OvK" secondAttribute="bottom" constant="100" id="LcZ-Yw-z7j"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="POj-no-wNi" secondAttribute="trailing" constant="40" id="U5n-6Q-Gw3"/>
+                            <constraint firstItem="8wx-yy-0Q1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="UuG-kK-fYz"/>
                             <constraint firstItem="Pna-ID-l3s" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="Xf6-gd-O8T"/>
                             <constraint firstItem="oyy-28-OvK" firstAttribute="top" secondItem="LGr-gt-MgP" secondAttribute="bottom" constant="120" id="Ypd-yI-nzS"/>
                             <constraint firstItem="JYG-kl-BRX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="f4e-np-XGe"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="oyy-28-OvK" secondAttribute="trailing" constant="44" id="gVd-kB-v57"/>
                             <constraint firstItem="YF7-Ic-z3R" firstAttribute="leading" secondItem="5k3-vA-RLu" secondAttribute="trailing" constant="30" id="hMB-h2-wXV"/>
                             <constraint firstItem="5k3-vA-RLu" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="k2Y-u9-BHC"/>
+                            <constraint firstItem="8wx-yy-0Q1" firstAttribute="top" secondItem="Tfi-FE-s6b" secondAttribute="bottom" constant="100" id="kpN-f4-iDg"/>
                             <constraint firstItem="YF7-Ic-z3R" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="sgv-zZ-wx4"/>
                             <constraint firstItem="Pna-ID-l3s" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uHb-UM-ma5"/>
                         </constraints>

@@ -18,7 +18,7 @@ protocol VideoCaptureDelegate: NSObjectProtocol {
 }
 
 class VideoCapture: NSObject {
-    // MARK: - Property
+    // MARK: Property
     var videoWriter: AVAssetWriter?
     
     var videoWriterInput: AVAssetWriterInput?
@@ -61,6 +61,7 @@ class VideoCapture: NSObject {
     /// 代理
     weak var delegate: VideoCaptureDelegate?
     
+    /// 锁
     let statusLock = NSLock()
     
     // MARK: - Life Cycle
@@ -115,6 +116,7 @@ class VideoCapture: NSObject {
         /// 这个位置包括下面的两个，必须写成(int)size.width/16*16,因为这个的大小必须是16的倍数，否则图像会发生拉扯、挤压、旋转。。。。不知道为啥
         bufferAttr[kCVPixelBufferWidthKey as String] = size.width
         bufferAttr[kCVPixelBufferHeightKey as String] = size.height
+        bufferAttr[kCVPixelBufferBytesPerRowAlignmentKey as String] = size.width * scale * 4
         bufferAttr[kCVPixelBufferCGBitmapContextCompatibilityKey as String] = true
         avAdaptor = AVAssetWriterInputPixelBufferAdaptor(assetWriterInput: videoWriterInput!, sourcePixelBufferAttributes: bufferAttr)
         
@@ -159,6 +161,8 @@ class VideoCapture: NSObject {
             }
         })
     }
+    
+    // MARK: - layer渲染方式
     
     /// 录制每一帧
     private func drawFrame() {
@@ -230,6 +234,15 @@ class VideoCapture: NSObject {
         CVPixelBufferUnlockBaseAddress(pixelBuffer!, CVPixelBufferLockFlags(rawValue: 0))
         statusLock.unlock()
     }
+    
+    // MARK: - 截屏方式
+    
+    private func writeVideoFrame() {
+        
+    }
+    
+    
+    // MARK: - File
     
     /// 视频的存放地址（如非必要 最好是放在caches里面）
     private func tempFilePath() -> String {
